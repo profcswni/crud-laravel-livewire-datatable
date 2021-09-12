@@ -18,7 +18,7 @@
 - Crear la base de datos dentro de phpmyadmin
 - Renombrar el archivo .env.example a .env
 
-´mv .env.example .env´
+`mv .env.example .env`
 
 - Revisar el nombre de la base de datos y el puerto dentro del arvhivo .env segun la configuracion de su equipo
 - Migrar la base de datos
