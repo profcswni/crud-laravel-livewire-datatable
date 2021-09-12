@@ -58,4 +58,9 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    //Relacion con la tabla de telefonos
+    public function telefono(){
+        return $this->hasMany(Telefono::class);
+    }
 }
