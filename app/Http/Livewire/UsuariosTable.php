@@ -20,6 +20,7 @@ class UsuariosTable extends DataTableComponent
 
     public function query(): Builder
     {
+        $usuarios = User::with("telefono")->get();
         return User::query();
     }
 }

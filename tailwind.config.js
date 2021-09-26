@@ -8,7 +8,9 @@ module.exports = {
         './storage/framework/views/*.php',
         './resources/views/**/*.blade.php',
     ],
-
+    variants: {
+        display: ['responsive', 'group-hover', 'group-focus'],
+    },
     theme: {
         extend: {
             fontFamily: {
