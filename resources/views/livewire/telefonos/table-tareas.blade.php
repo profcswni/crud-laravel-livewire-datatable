@@ -10,6 +10,7 @@
     >
         Editar
     </a>
+
     <a
         wire:click="eliminar('{{ $telefono->id }}')"
         href="#"
