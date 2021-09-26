@@ -22,4 +22,11 @@
     </x-livewire-tables::table.cell>
 @endif
 
+@if ($columnSelect && $this->isColumnSelectEnabled('tareas'))
+    <x-livewire-tables::table.cell>
+        @include("livewire.telefonos.table-tareas", ["telefono" => $row])
+    </x-livewire-tables::table.cell>
+@endif
+
+
 
