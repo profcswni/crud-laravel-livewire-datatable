@@ -27,6 +27,10 @@
 
 `php artisan migrate:fresh --seed`
 
+- Crear una llave para la aplicación
+
+`php artisan serve key:generate`
+
 - Activar el servidor 
 
 `php artisan serve`
