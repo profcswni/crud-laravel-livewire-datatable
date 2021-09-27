@@ -37,3 +37,10 @@ Route::middleware(['auth:sanctum', 'verified'])
     \App\Http\Livewire\UsuariosComponent::class
 )
 ->name('usuarios');
+
+// Ruta de usuarios
+Route::middleware(['auth:sanctum', 'verified'])
+    ->get('/administrar-telefono',
+        \App\Http\Livewire\FormularioTelefonoComponent::class
+    )
+    ->name('telefono-tareas');

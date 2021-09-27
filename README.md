@@ -1,7 +1,9 @@
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
-# CRUD con Laravel
+# CRUD con Laravel y Jetsteam
 
+- Indicaciones para instalacion:
+  - [Documento con orientaciones completas](https://docs.google.com/document/d/1OM3freGecwj94yIL-Z_2vfJsqeLLuHAzzbUtucRYyks/edit?usp=sharing)
 - Descargar el repositorio
 - Instalar las dependencias de Composer
 
@@ -20,7 +22,7 @@
 
 `mv .env.example .env`
 
-- Revisar el nombre de la base de datos y el puerto dentro del arvhivo .env segun la configuracion de su equipo
+- Revisar el nombre de la base de datos y el puerto dentro del archivo .env segun la configuracion de su equipo
 - Migrar la base de datos
 
 `php artisan migrate:fresh --seed`
