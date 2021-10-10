@@ -18,15 +18,15 @@
             <x-slot name="form">
                 <!-- Solicitar el numero de telefono -->
                 <div class="col-span-6 sm:col-span-4">
-                    <x-jet-label for="numero" value="Número de teléfono" />
+                    <x-jet-label for="numero" value="Número de teléfono"/>
                     <x-jet-input id="numero" type="text" class="mt-1 block w-full"
-                                 wire:model.defer="telefono.numero" />
-                    <x-jet-input-error for="telefono.numero" class="mt-2" />
+                                 wire:model.defer="telefono.numero"/>
+                    <x-jet-input-error for="telefono.numero" class="mt-2"/>
                 </div>
 
                 <!-- Crear la lista de operadoras -->
                 <div class="col-span-6 sm:col-span-4">
-                    <x-jet-label for="operadora" value="Selecciona la operadora" />
+                    <x-jet-label for="operadora" value="Selecciona la operadora"/>
                     <select wire:model.defer="telefono.operadora"
                             name="operadora"
                             class="w-full"
@@ -37,14 +37,24 @@
                             </option>
                         @endforeach
                     </select>
-                    <x-jet-input-error for="telefono.operadora" class="mt-2" />
+                    <x-jet-input-error for="telefono.operadora" class="mt-2"/>
                 </div>
             </x-slot>
 
             <x-slot name="actions">
-                <x-jet-button wire:loading.attr="disabled">
-                   Guardar
-                </x-jet-button>
+                @if(request()->routeIs('telefonos-eliminar'))
+                    <x-jet-danger-button wire:click="eliminar" class="mr-4" wire:loading.attr="disabled">
+                        Eliminar
+                    </x-jet-danger-button>
+                @endif
+                <x-jet-danger-button wire:click="cancelar" class="mr-4" wire:loading.attr="disabled">
+                    Cancelar
+                </x-jet-danger-button>
+                @if(!request()->routeIs('telefonos-eliminar'))
+                    <x-jet-button wire:loading.attr="disabled">
+                        Guardar
+                    </x-jet-button>
+                @endif
             </x-slot>
         </x-jet-form-section>
     </div>

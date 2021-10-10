@@ -38,9 +38,23 @@ Route::middleware(['auth:sanctum', 'verified'])
 )
 ->name('usuarios');
 
-// Ruta de usuarios
+// Ruta de telefonos
 Route::middleware(['auth:sanctum', 'verified'])
     ->get('/administrar-telefono',
         \App\Http\Livewire\FormularioTelefonoComponent::class
     )
     ->name('telefono-tareas');
+
+// Ruta de edición de teléfonos
+Route::middleware(['auth:sanctum', 'verified'])
+    ->get('/editar-telefono/{id}',
+        \App\Http\Livewire\FormularioTelefonoComponent::class
+    )
+    ->name('telefonos-editar');
+
+// Ruta de eliminar un teléfono
+Route::middleware(['auth:sanctum', 'verified'])
+    ->get('/eliminar-telefono/{id}',
+        \App\Http\Livewire\FormularioTelefonoComponent::class
+    )
+    ->name('telefonos-eliminar');

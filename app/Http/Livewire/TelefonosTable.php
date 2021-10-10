@@ -66,4 +66,12 @@ class TelefonosTable extends DataTableComponent
     {
         return 'livewire.telefonos.table-telefono-row';
     }
+
+    public function editar($id){
+        redirect(route("telefonos-editar",['id' => $id]));
+    }
+
+    public function eliminar($id){
+        redirect(route("telefonos-eliminar",['id' => $id]));
+    }
 }

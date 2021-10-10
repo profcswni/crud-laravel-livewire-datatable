@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use App\Models\Telefono;
+use Illuminate\Routing\Route;
 use Livewire\Component;
 
 class FormularioTelefonoComponent extends Component
@@ -21,7 +22,15 @@ class FormularioTelefonoComponent extends Component
     ];
 
     public function mount(){
-        $this->telefono = new Telefono();
+        $telefono_id = \Route::current()->parameter('id') ?? null;
+
+        if($telefono_id){
+            $this->telefono = Telefono::findOrFail($telefono_id);
+        }else{
+            $this->telefono = new Telefono();
+        }
+
+
     }
 
     public function render()
@@ -36,12 +45,23 @@ class FormularioTelefonoComponent extends Component
         $user_id = auth()->user()->id;
         // Asigar el id al objeto telefono
         $this->telefono->user_id = $user_id;
+
         //Guardar en la base de datos
-        $this->telefono->save();
+        $telefono_id = $this->telefono->id ?? null;
+        //Validar la operacion de actualizar o crear
+        if($telefono_id){
+            $this->telefono->update();
+        }else{
+            $this->telefono->save();
+        }
         //Limpiar los datos del formulario
         //SI es necesario
         //$this->telefono = new Telefono();
         //Redireccionamos a la tabla de numeros
+        redirect(route("telefonos"));
+    }
+
+    public function cancelar(){
         redirect(route("telefonos"));
     }
 }
