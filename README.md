@@ -29,7 +29,7 @@
 
 - Crear una llave para la aplicación
 
-`php artisan serve key:generate`
+`php serve key:generate`
 
 - Activar el servidor 
 
